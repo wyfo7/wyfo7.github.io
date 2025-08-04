@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset & base styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        height: 100vh; /* 占满整个视口高度 */
+        margin: 0;
+        background-color: #d6e2f0; /* 背景颜色 */
+        font-family: 'Outfit', sans-serif;
+      }
+      .container {
+        width: 320px;
+        height: 500px;
+        background: white;
+        border-radius: 20px;
+        padding: 16px;
+      }
+      .container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; /* 圆角 */
+      }
+      .card-title {
+        font-size: 1.375rem;
+        font-weight: bold;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .card-text {
+        font-size: 0.9375rem;
+        color: #6c757d; /* 灰色文本 */
+        text-align: center;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/image-qr-code.png" alt="" />
+      <h1 class="card-title">
+        Improve your front-end skills by building projects
+      </h1>
+      <p class="card-text">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
+  </body>
+</html>
