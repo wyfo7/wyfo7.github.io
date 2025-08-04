@@ -1,39 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Range 示例</title>
-</head>
-<body>
-  <p id="foo">
-    这是一个用来演示 DOM Range 对象选中部分文本的示例。你可以看到被选中的文本会高亮显示。
-  </p>
-
-  <button id="selectBtn">选中部分文本</button>
-
-  <script>
-    const paragraph = document.getElementById("foo");
-    const btn = document.getElementById("selectBtn");
-
-    btn.onclick = function() {
-      // 创建新的 Range
-      const range = document.createRange();
-
-      // 这里假设 paragraph 只有一个文本节点，所以直接用 childNodes[0]
-      const textNode = paragraph.childNodes[0];
-
-      // 设置开始和结束位置，这里的数字是字符索引
-      range.setStart(textNode, 5);  // 从第5个字符开始（从0开始计数）
-      range.setEnd(textNode, 15);   // 到第15个字符结束
-
-      // 取得当前页面的选区
-      const selection = window.getSelection();
-
-      // 清除之前的选区
-      selection.removeAllRanges();
-
-      // 添加我们新创建的范围到选区中
-      selection.addRange(range);
-    }
-  </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset & base styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        height: 100vh; /* 占满整个视口高度 */
+        margin: 0;
+        background-color: #d6e2f0; /* 背景颜色 */
+        font-family: 'Outfit', sans-serif;
+      }
+      .container {
+        width: 320px;
+        height: 500px;
+        background: white;
+        border-radius: 20px;
+        padding: 16px;
+      }
+      .container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; /* 圆角 */
+      }
+      .card-title {
+        font-size: 1.375rem;
+        font-weight: bold;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .card-text {
+        font-size: 0.9375rem;
+        color: #6c757d; /* 灰色文本 */
+        text-align: center;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/image-qr-code.png" alt="" />
+      <h1 class="card-title">
+        Improve your front-end skills by building projects
+      </h1>
+      <p class="card-text">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
+  </body>
 </html>
